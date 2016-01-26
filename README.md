@@ -7,6 +7,7 @@
 * [Installation](#installation)
 * [Usage](#usage)
 * [Example of configuration](#example-of-configuration)
+* [Visual appearance of the menu](#visual-appearance-of-the-menu)
 * [License](#license)
 
 This package allows to insert arbitrary symbols in Emacs in a very efficient
@@ -128,6 +129,13 @@ Except for Greek letters that are a bit too numerous, all characters here
 can be accessed in one or two key presses. Given that there is always a
 visual clue before you and all the characters you need to type are on the
 home row (thanks to Avy), this method of input should be quite efficient.
+
+## Visual appearance of the menu
+
+Just like [`ace-popup-menu`](https://github.com/mrkkrp/ace-popup-menu), the
+package is built on top of [`avy-menu`](https://github.com/mrkkrp/avy-menu),
+which implements this handy Avy-powered popup menu. To control appearance of
+the menu, use <kbd>M-x customize-group avy-menu RET</kbd>.
 
 ## License
 
