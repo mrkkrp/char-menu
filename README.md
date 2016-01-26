@@ -30,7 +30,31 @@ Selling points:
 
 ## Various methods to insert a Unicode symbol in Emacs
 
-*Coming soon…*
+Let's skip copying characters from file or web-page — it's just too
+inefficient.
+
+One method to insert arbitrary characters is to use `key-translation-map`,
+like this:
+
+```emacs-lisp
+(define-key key-translation-map (kbd "<menu> p") (kbd "φ"))
+```
+
+The main problem here is that if you have many such things, they are hard to
+remember and this approach is not very good at organizing things into
+categories. The same with built-in key bindings like <kbd>C-x 8 …</kbd> —
+something I always had trouble using, they are also hard to type.
+
+Another approach is to use `abbrev-mode`. I don't like that mode because you
+need to keep it enabled and chances are that even if you normally don't need
+the word “alpha”, it does not mean that you want always replace it with
+“α”. I like to be able to explicitly control when I need “alpha” and when I
+want “α”.
+
+Inserting character by its name is done with `insert-char` command, but it
+cannot be used on daily basis because even with auto-completion it takes too
+long. We usually don't want all characters available, but some subset of
+them that is highly useful.
 
 ## Installation
 
@@ -44,11 +68,62 @@ package:
 
 ## Usage
 
-*Coming soon…*
+Normally there is only two things that you need to do:
+
+1. Set variable `char-menu`.
+2. Bind command `char-menu`.
+
+That's it.
+
+Variable `char-menu` can be customized via “customize” interface (<kbd>M-x
+customize-group char-menu RET</kbd>) or set with `setq`. That variable
+should be bound to a list where every element is either a string to insert
+or sub-menu, which is represented as a list where the first element is
+header of the sub-menu and the rest is its items.
+
+Place most frequently needed characters at the beginning of the list. Other
+characters can be organized in categories: “Arrows”, “Greek letters”, “Math
+symbols”, whatever. It's best to keep number of menu items less then 10,
+because then you will be able to choose character using single key press on
+home row. You don't need to think about key bindings — the package assigns
+them for you.
+
+Usually you want to insert a single character, but there is a need for
+paired punctuation like “this” or «this». Just put these characters together
+and they will be inserted with point between them. Wrapping of selected text
+is also supported.
+
+As for binding of `char-menu` command, it should be as easy as:
+
+```emacs-lisp
+(global-set-key (kbd "<menu> SPC") #'char-menu)
+```
+
+Of course you can choose a different key combination to assign for this.
 
 ## Example of configuration
 
-*Coming soon…*
+Default configuration is quite basic:
+
+```emacs-lisp
+("—" "‘’" "“”" "…")
+```
+
+As an example of something more sophisticated, try this:
+
+```emacs-lisp
+'("—" "‘’" "“”" "…" "«»" "–"
+  ("Typography" "•" "©" "†" "‡" "°" "·" "§" "№" "★")
+  ("Math"       "≈" "≡" "≠" "∞" "×" "±" "∓" "÷" "√")
+  ("Arrows"     "←" "→" "↑" "↓" "⇐" "⇒" "⇑" "⇓")
+  ("Greek"      "α" "β" "Y" "δ" "ε" "ζ" "η" "θ" "ι" "κ" "λ" "μ"
+                "ν" "ξ" "ο" "π" "ρ" "σ" "τ" "υ" "φ" "χ" "ψ" "ω"))
+```
+
+Except for Greek letters that are a bit too numerous, all characters here
+can be accessed in one or two key presses. Given that there is always a
+visual clue before you and all the characters you need to type are on the
+home row (thanks to Avy), this method of input should be quite efficient.
 
 ## License
 
