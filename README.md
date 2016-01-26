@@ -3,7 +3,11 @@
 [![License GPL 3](https://img.shields.io/badge/license-GPL_3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.txt)
 [![Build Status](https://travis-ci.org/mrkkrp/char-menu.svg?branch=master)](https://travis-ci.org/mrkkrp/char-menu)
 
-![gif animation here]
+* [Various methods to insert a Unicode symbol in Emacs](#various-methods-to-insert-a-unicode-symbol-in-emacs)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Example of configuration](#example-of-configuration)
+* [License](#license)
 
 This package allows to insert arbitrary symbols in Emacs in a very efficient
 and straightforward way. Whether you ever need to insert only a couple of
@@ -112,12 +116,12 @@ Default configuration is quite basic:
 As an example of something more sophisticated, try this:
 
 ```emacs-lisp
-'("—" "‘’" "“”" "…" "«»" "–"
-  ("Typography" "•" "©" "†" "‡" "°" "·" "§" "№" "★")
-  ("Math"       "≈" "≡" "≠" "∞" "×" "±" "∓" "÷" "√")
-  ("Arrows"     "←" "→" "↑" "↓" "⇐" "⇒" "⇑" "⇓")
-  ("Greek"      "α" "β" "Y" "δ" "ε" "ζ" "η" "θ" "ι" "κ" "λ" "μ"
-                "ν" "ξ" "ο" "π" "ρ" "σ" "τ" "υ" "φ" "χ" "ψ" "ω"))
+("—" "‘’" "“”" "…" "«»" "–"
+ ("Typography" "•" "©" "†" "‡" "°" "·" "§" "№" "★")
+ ("Math"       "≈" "≡" "≠" "∞" "×" "±" "∓" "÷" "√")
+ ("Arrows"     "←" "→" "↑" "↓" "⇐" "⇒" "⇑" "⇓")
+ ("Greek"      "α" "β" "Y" "δ" "ε" "ζ" "η" "θ" "ι" "κ" "λ" "μ"
+               "ν" "ξ" "ο" "π" "ρ" "σ" "τ" "υ" "φ" "χ" "ψ" "ω"))
 ```
 
 Except for Greek letters that are a bit too numerous, all characters here
