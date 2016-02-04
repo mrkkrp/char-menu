@@ -133,14 +133,11 @@ header."
 (defun char-menu--pairp (str)
   "Select STR representing paired character sequence."
   (and (= (length str) 2)
-       (eq (get-char-code-property
-            (elt str 0)
-            'general-category)
-           'Pi)
-       (eq (get-char-code-property
-            (elt str 1)
-            'general-category)
-           'Pf)))
+       (cl-every
+        (lambda (x)
+          (memq (get-char-code-property x 'general-category)
+                '(Pi Pf)))
+        str)))
 
 (provide 'char-menu)
 
