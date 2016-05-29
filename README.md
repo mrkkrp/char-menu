@@ -1,7 +1,7 @@
 # Char Menu
 
 [![License GPL 3](https://img.shields.io/badge/license-GPL_3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.txt)
-[![MELPA](http://melpa.org/packages/char-menu-badge.svg)](http://melpa.org/#/char-menu)
+[![MELPA](https://melpa.org/packages/char-menu-badge.svg)](https://melpa.org/#/char-menu)
 [![Build Status](https://travis-ci.org/mrkkrp/char-menu.svg?branch=master)](https://travis-ci.org/mrkkrp/char-menu)
 
 * [Various methods to insert a Unicode symbol in Emacs](#various-methods-to-insert-a-unicode-symbol-in-emacs)
