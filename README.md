@@ -77,7 +77,7 @@ package-install char-menu RET</kbd>.
 
 ## Usage
 
-Normally there is only two things that you need to do:
+Normally there are only two things that you need to do:
 
 1. Set variable `char-menu`.
 2. Bind command `char-menu`.
@@ -130,7 +130,7 @@ As an example of something more sophisticated, try this:
 ```
 
 Except for Greek letters that are a bit too numerous, all characters here
-can be accessed in one or two key presses. Given that there is always a
+can be accessed in one or two key strokes. Given that there is always a
 visual clue before you and all the characters you need to type are on the
 home row (thanks to Avy), this method of input should be quite efficient.
 
