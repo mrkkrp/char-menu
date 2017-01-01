@@ -143,6 +143,6 @@ the menu, use <kbd>M-x customize-group avy-menu RET</kbd>.
 
 ## License
 
-Copyright © 2016 Mark Karpov
+Copyright © 2016–2017 Mark Karpov
 
 Distributed under GNU GPL, version 3.
