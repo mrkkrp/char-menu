@@ -36,7 +36,7 @@ Selling points:
 
 ## Various methods to insert a Unicode symbol in Emacs
 
-Let's skip copying characters from file or web-page — it's just too
+Let's skip copying characters from a file or web-page — it's just too
 inefficient.
 
 One method to insert arbitrary characters is to use `key-translation-map`,
@@ -53,14 +53,14 @@ something I always had trouble using, they are also hard to type.
 
 Another approach is to use `abbrev-mode`. I don't like that mode because you
 need to keep it enabled and chances are that even if you normally don't need
-the word “alpha”, it does not mean that you want always replace it with
-“α”. I like to be able to explicitly control when I need “alpha” and when I
-want “α”.
+the word “alpha”, it does not mean that you want always replace it with “α”.
+I like to be able to explicitly control when I need “alpha” and when I want
+“α”.
 
-Inserting character by its name is done with `insert-char` command, but it
-cannot be used on daily basis because even with auto-completion it takes too
-long. We usually don't want all characters available, but some subset of
-them that is highly useful.
+Inserting a character by its name is done with `insert-char` command, but it
+cannot be used very often because even with auto-completion it takes too
+long to type name of a character. We also usually don't want all characters
+available, but some subset of them that is useful.
 
 ## Installation
 
@@ -82,25 +82,23 @@ Normally there are only two things that you need to do:
 1. Set variable `char-menu`.
 2. Bind command `char-menu`.
 
-That's it.
-
-Variable `char-menu` can be customized via “customize” interface (<kbd>M-x
-customize-group char-menu RET</kbd>) or set with `setq`. That variable
-should be bound to a list where every element is either a string to insert
-or sub-menu, which is represented as a list where the first element is
-header of the sub-menu and the rest is its items.
+Variable `char-menu` can be customized via the “customize” interface
+(<kbd>M-x customize-group char-menu RET</kbd>) or set with `setq`. That
+variable should be bound to a list where every element is either a string to
+insert or sub-menu, which is represented as a list where the first element
+is the header of the sub-menu and the rest is its items.
 
 Place most frequently needed characters at the beginning of the list. Other
 characters can be organized in categories: “Arrows”, “Greek letters”, “Math
-symbols”, whatever. It's best to keep number of menu items less then 10,
+symbols”, whatever. It's best to keep the number of menu items less then 10,
 because then you will be able to choose character using single key press on
 home row. You don't need to think about key bindings — the package assigns
 them for you.
 
 Usually you want to insert a single character, but there is a need for
 paired punctuation like “this” or «this». Just put these characters together
-and they will be inserted with point between them. Wrapping of selected text
-is also supported.
+and they will be inserted with point (cursor) between them. Wrapping of
+selected text is also supported.
 
 As for binding of `char-menu` command, it should be as easy as:
 
@@ -132,14 +130,14 @@ As an example of something more sophisticated, try this:
 Except for Greek letters that are a bit too numerous, all characters here
 can be accessed in one or two key strokes. Given that there is always a
 visual clue before you and all the characters you need to type are on the
-home row (thanks to Avy), this method of input should be quite efficient.
+home row (thanks to Avy), this method of input is quite efficient.
 
 ## Visual appearance of the menu
 
 Just like [`ace-popup-menu`](https://github.com/mrkkrp/ace-popup-menu), the
 package is built on top of [`avy-menu`](https://github.com/mrkkrp/avy-menu),
 which implements this handy Avy-powered popup menu. To control appearance of
-the menu, use <kbd>M-x customize-group avy-menu RET</kbd>.
+the menu, invoke <kbd>M-x customize-group avy-menu RET</kbd>.
 
 ## License
 

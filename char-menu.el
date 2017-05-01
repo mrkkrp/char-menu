@@ -82,7 +82,7 @@ wrapping of selected text."
 
 ;;;###autoload
 (defun char-menu (&optional menu header)
-  "Display given MENU and insert selected item, if any.
+  "Display the given MENU and insert selected item, if any.
 
 See information about format of the menu in documentation of
 `char-menu'.  If no argument is supplied, menu from that variable
