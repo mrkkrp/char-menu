@@ -16,7 +16,7 @@ and straightforward way. Whether you ever need to insert only a couple of
 proper punctuation symbols or you're a Unicode geek who likes all sorts of
 arrows and fancy math symbols, this package may be of some use.
 
-Selling points:
+Features:
 
 * it allows you organize all symbols you ever need into a hierarchy you
   define;
@@ -36,7 +36,7 @@ Selling points:
 
 ## Various methods to insert a Unicode symbol in Emacs
 
-Let's skip copying characters from a file or web-page — it's just too
+Let's skip copying characters from file or web-page—it's just too
 inefficient.
 
 One method to insert arbitrary characters is to use `key-translation-map`,
@@ -47,20 +47,20 @@ like this:
 ```
 
 The main problem here is that if you have many such things, they are hard to
-remember and this approach is not very good at organizing things into
-categories. The same with built-in key bindings like <kbd>C-x 8 …</kbd> —
-something I always had trouble using, they are also hard to type.
+remember, and this approach is not very good at organizing symbols into
+categories. The same with built-in key bindings like <kbd>C-x 8
+…</kbd>—something I always had trouble using, they are also hard to type.
 
 Another approach is to use `abbrev-mode`. I don't like that mode because you
-need to keep it enabled and chances are that even if you normally don't need
-the word “alpha”, it does not mean that you want always replace it with “α”.
-I like to be able to explicitly control when I need “alpha” and when I want
-“α”.
+need to keep it enabled and chances are even if you normally don't need the
+word “alpha”, it does not mean that you want always replace it with the “α”
+symbol. I like to be able to explicitly control when I want “alpha” and when
+I want “α”.
 
-Inserting a character by its name is done with `insert-char` command, but it
-cannot be used very often because even with auto-completion it takes too
-long to type name of a character. We also usually don't want all characters
-available, but some subset of them that is useful.
+Inserting a character by its name is done with the `insert-char` command,
+but it cannot be used heavily because even with auto-completion it takes too
+long to type full name of a character. Also, we usually don't want all
+characters available, but a certain subset of them that is highly useful.
 
 ## Installation
 
@@ -72,27 +72,27 @@ package:
 (require 'char-menu)
 ```
 
-However, simplest method to install the package is with MELPA: <kbd>M-x
+However, the simplest method to install the package is with MELPA: <kbd>M-x
 package-install char-menu RET</kbd>.
 
 ## Usage
 
-Normally there are only two things that you need to do:
+Normally, there are only two things that you need to do:
 
-1. Set variable `char-menu`.
-2. Bind command `char-menu`.
+1. Set the variable `char-menu`.
+2. Bind the command `char-menu`.
 
-Variable `char-menu` can be customized via the “customize” interface
+The variable `char-menu` can be customized via the “customize” interface
 (<kbd>M-x customize-group char-menu RET</kbd>) or set with `setq`. That
 variable should be bound to a list where every element is either a string to
-insert or sub-menu, which is represented as a list where the first element
+insert or a sub-menu, which is represented as a list where the first element
 is the header of the sub-menu and the rest is its items.
 
 Place most frequently needed characters at the beginning of the list. Other
 characters can be organized in categories: “Arrows”, “Greek letters”, “Math
 symbols”, whatever. It's best to keep the number of menu items less then 10,
-because then you will be able to choose character using single key press on
-home row. You don't need to think about key bindings — the package assigns
+because then you will be able to choose a character using a single key press
+on home row. You don't need to think about key bindings—the package assigns
 them for you.
 
 Usually you want to insert a single character, but there is a need for
@@ -110,7 +110,7 @@ Of course you can choose a different key combination to assign for this.
 
 ## Example of configuration
 
-Default configuration is quite basic:
+The default configuration is quite basic:
 
 ```emacs-lisp
 ("—" "‘’" "“”" "…")

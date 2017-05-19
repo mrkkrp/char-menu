@@ -31,7 +31,7 @@
 ;; all sorts of arrows and fancy math symbols, this package may be of some
 ;; use.
 ;;
-;; Selling points:
+;; Features:
 ;;
 ;; * it allows you organize all symbols you ever need into a hierarchy you
 ;;   define;
