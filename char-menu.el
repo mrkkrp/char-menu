@@ -25,30 +25,20 @@
 
 ;;; Commentary:
 
-;; This package allows to insert arbitrary symbols in Emacs in a very
-;; efficient and straightforward way.  Whether you ever need to insert only
-;; a couple of proper punctuation symbols or you're a Unicode geek who likes
-;; all sorts of arrows and fancy math symbols, this package may be of some
-;; use.
+;; This package allows the user to create a menu for fast insertion of
+;; arbitrary symbols.
 ;;
 ;; Features:
 ;;
-;; * it allows you organize all symbols you ever need into a hierarchy you
-;;   define;
+;; * The symbols can be organized in hierarchies.
 ;;
-;; * in that tree-like structure most frequently used commands will require
-;;   only one key-press, while others may get dedicated section (for
-;;   example, “arrows”) so you first select that section and then you choose
-;;   a symbol in it;
+;; * Most frequently used symbols require only one keystroke, while others
+;;   are placed in dedicated sub-menus (for example, “arrows”) and can be
+;;   inserted with two or three keystrokes.
 ;;
-;; * it makes sense to have paired characters in that menu, like “” (and for
-;;   that matter arbitrary combinations of symbols);
-;;
-;; * however insertion of paired characters will place the point between
-;;   them;
-;;
-;; * …and if you insert paired characters while some text is selected, they
-;;   will wrap it.
+;; * Paired characters like `“”` can be inserted.  Normally, the point will
+;;   be placed between the characters, but if some text is selected, the
+;;   paired character will wrap it without moving the point.
 
 ;;; Code:
 
@@ -58,7 +48,7 @@
 (defgroup char-menu nil
   "A menu for efficient insertion of arbitrary symbols."
   :group  'convenience
-  :tag    "Char Menu"
+  :tag    "Char menu"
   :prefix "char-menu-"
   :link   '(url-link :tag "GitHub" "https://github.com/mrkkrp/char-menu"))
 
@@ -66,12 +56,11 @@
   "The char menu.
 
 This is a list containing either menu items directly as strings,
-or sub-menus as lists where the first element is sub-menu header
-and the rest is menu items.
+or sub-menus as lists where the first element is the sub-menu
+header and the rest is the menu items.
 
 Usually every insertable menu item is one character long, but
-paired characters will have additional support for insertion and
-wrapping of selected text."
+paired characters may also be added."
   :tag "The menu to show"
   :type '(repeat
           (choice
@@ -82,12 +71,12 @@ wrapping of selected text."
 
 ;;;###autoload
 (defun char-menu (&optional menu header)
-  "Display the given MENU and insert selected item, if any.
+  "Display the given MENU and insert the selected item, if any.
 
-See information about format of the menu in documentation of
-`char-menu'.  If no argument is supplied, menu from that variable
-will be used.  Note that MENU should not be empty, or error will
-be signalled.
+See the information about the format of the menu in the
+documentation of `char-menu'.  If no argument is supplied, menu
+from that variable will be used.  Note that MENU should not be
+empty, or an error will be signaled.
 
 HEADER, if supplied, will be appended to the default menu
 header."
@@ -110,7 +99,7 @@ header."
         (char-menu--insert selection)))))
 
 (defun char-menu--make-item (item)
-  "Format ITEM in the way suiteable for use with `avy-menu'."
+  "Format ITEM in the way suitable for use with `avy-menu'."
   (cons (if (consp item)
             (car item)
           item)
