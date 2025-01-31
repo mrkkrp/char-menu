@@ -2,7 +2,7 @@
 
 [![License GPL 3](https://img.shields.io/badge/license-GPL_3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.txt)
 [![MELPA](https://melpa.org/packages/char-menu-badge.svg)](https://melpa.org/#/char-menu)
-![CI](https://github.com/mrkkrp/char-menu/workflows/CI/badge.svg?branch=master)
+[![CI](https://github.com/mrkkrp/char-menu/actions/workflows/ci.yaml/badge.svg)](https://github.com/mrkkrp/char-menu/actions/workflows/ci.yaml)
 
 * [Various methods to insert a Unicode symbol in Emacs](#various-methods-to-insert-a-unicode-symbol-in-emacs)
 * [Installation](#installation)
