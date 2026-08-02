@@ -57,7 +57,7 @@
 
 This is a list containing either menu items directly as strings,
 or sub-menus as lists where the first element is the sub-menu
-header and the rest is the menu items.
+header and the rest are the menu items.
 
 Usually every insertable menu item is one character long, but
 paired characters may also be added."
@@ -74,9 +74,9 @@ paired characters may also be added."
   "Display the given MENU and insert the selected item, if any.
 
 See the information about the format of the menu in the
-documentation of `char-menu'.  If no argument is supplied, menu
-from that variable will be used.  Note that MENU should not be
-empty, or an error will be signaled.
+documentation of `char-menu'.  If no argument is supplied, the
+menu from that variable will be used.  Note that MENU should not
+be empty, or an error will be signaled.
 
 HEADER, if supplied, will be appended to the default menu
 header."
@@ -120,7 +120,7 @@ header."
         (backward-char 1)))))
 
 (defun char-menu--pairp (str)
-  "Select STR representing paired character sequence."
+  "Return non-nil if STR represents a paired character sequence."
   (and (= (length str) 2)
        (cl-every
         (lambda (x)

@@ -42,9 +42,9 @@ hard to remember. This approach is also not very good for organizing symbols
 into categories.
 
 Another approach is to use `abbrev-mode`. I don't like that mode because one
-needs to keep it enabled and chances are even if you normally don't need the
-word “alpha”, it does not mean that you always want to replace it with the
-symbol “α”.
+needs to keep it enabled, and even if you normally don't need the word
+“alpha”, that does not mean you always want to replace it with the symbol
+“α”.
 
 Inserting a character by its name is done with the `insert-char` command,
 but it cannot be used heavily because even with auto-completion it takes too
@@ -79,8 +79,8 @@ header of the sub-menu and the rest is its items.
 
 Place the most frequently needed characters at the beginning of the list.
 Other characters can be organized in categories: “Arrows”, “Greek letters”,
-“Math symbols”, whatever. It's best to keep the number of the menu items
-less then 10, because then you will be able to choose a character using a
+“Math symbols”, whatever. It's best to keep the number of menu items
+less than 10, because then you will be able to choose a character using a
 single key press on the home row. You don't need to think about key
 bindings—the package assigns them for you.
 
@@ -123,8 +123,8 @@ can be accessed in one or two key strokes.
 
 Just like [`ace-popup-menu`](https://github.com/mrkkrp/ace-popup-menu), the
 package is built on top of [`avy-menu`](https://github.com/mrkkrp/avy-menu),
-which implements a handy Avy-powered popup menu. To control appearance of
-the menu, invoke `M-x customize-group avy-menu RET`.
+which implements a handy Avy-powered popup menu. To control the appearance
+of the menu, invoke `M-x customize-group avy-menu RET`.
 
 ## License
 
